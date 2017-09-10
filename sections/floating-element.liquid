@@ -1,0 +1,63 @@
+<div class="abs-object small--hide"
+            style="
+                    position: absolute;
+                    left: {{ section.settings.xOffset }}%;
+                    top: {{ section.settings.yOffset }}%;
+                    width:{{ section.settings.image.width }}px;
+                    height:{{ section.settings.image.height }}px;
+                    transform: scale({{ section.settings.scale | times: 2.0 | divided_by: 100.0  }});
+                    background-repeat: no-repeat;
+                    background-position: center;
+            {% if section.settings.image %}
+                background-image: url('{{ section.settings.image | img_url: '2048x' }}');
+            {% endif %}
+                    ">
+</div>
+
+
+{% schema %}
+{
+    "name": "Image absolute position",
+    "class": "index-section  absolute-section",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+        },
+        {
+            "type": "range",
+            "id": "scale",
+            "label": "Scale",
+            "min": 0,
+            "max": 100,
+            "unit":      "%",
+            "default":   50
+        },
+        {
+            "type": "range",
+            "id": "xOffset",
+            "label": "X offset",
+            "min": 0,
+            "max": 100,
+            "unit":      "%",
+            "default":   30
+        },
+        {
+            "type": "range",
+            "id": "yOffset",
+            "label": "Y offset",
+            "min": 0,
+            "max": 100,
+            "unit":      "%",
+            "default":   30
+        }
+    ],
+    "presets": [
+            {
+                "name": "Absolute Image",
+                "category": "MilfDad"
+            }
+        ]
+}
+{% endschema %}

@@ -1,0 +1,45 @@
+<script>
+    $(document).ready(function () {
+        var template = `
+        <div class="box">
+            {{ 'milfdadpasswordgif.gif' | asset_url | img_tag: 'Logo', 'floating-logo' }}
+        </div>`;
+        var $div = $(template).prependTo('body');
+    })
+</script>
+
+
+<style>
+    .box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 99;
+        cursor: pointer;
+    }
+
+    @media (max-width: 767px) {
+        .floating-logo {
+        }
+    }
+
+    @media (min-width: 768px) {
+        .floating-logo {
+            display: none;
+        }
+    }
+  @media only screen and (max-width: 749px){
+    img.floating-logo {
+   		padding-top: 100px !important;
+        max-width: 50%;
+    }
+   .floating-coin-password {
+    	max-width: 50% !important;
+    }
+  }
+  div.grid__item.medium-up--one-quarter ul.site-nav.list--inline {
+
+    padding-top: 0!important;
+}
+
+</style>

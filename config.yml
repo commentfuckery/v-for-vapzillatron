@@ -1,0 +1,9 @@
+development:
+  password: 
+  theme_id: "ID OF THEME"
+  store: (something).myshopify.com	
+production:
+  password: 
+  theme_id: 'live'
+  store: (something).myshopify.com
+  timeout: 30s

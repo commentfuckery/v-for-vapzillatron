@@ -1,0 +1,111 @@
+<div id="index-content">
+   {% include 'center-logo' %}
+
+    {{ content_for_index }}
+    <div id="mobile-home-logo" class="hidden" style="">
+    {{ 'milfdadpasswordgif.gif' | asset_url | img_tag: 'Logo', 'floating-coin-password' }}
+    </div>
+</div>
+
+
+<style>
+    #mobile-home-logo{}
+    #mobile-home-logo img{
+        width: 135vw;
+        margin-left:-65px;
+        max-width: none;
+    }
+    @media only screen and (min-width: 750px) {
+        #mobile-home-logo {
+            display: none;
+        }
+        .hide-mobile{
+            display: none;
+        }
+        .only-desktop-view{
+            display: none !important;
+        }
+    }
+
+
+    @media only screen and (max-width: 749px) {
+        #shopify-section-header{
+            display:none;
+        }
+        .hide-mobile{
+            display: none;
+        }
+        .only-desktop-view{
+            display: none !important;
+        }
+        #index-content {
+            display: none;
+        }
+
+        #MainContent > .grid.grid--no-gutters{
+            //margin-top: 200px;
+        }
+
+        .box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            height:200px;
+            left:0;
+            top:0;
+        }
+
+        div.grid__item.medium-up--one-quarter ul.site-nav.list--inline{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            padding-top: 50px;
+        }
+        div.grid__item.medium-up--one-quarter{
+            width: 100%;
+        }
+
+        #sidebar-header .full-width {
+            width: 100%;
+            max-width: 300px;
+            display: block;
+        }
+        img.floating-logo {
+            padding-top: 160px;
+        }
+
+        nav.grid__item.medium-up--one-half.small--hide {
+            display: table-cell !important;
+        }
+
+    }
+
+    #index-content {
+           min-height: 75vh;
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+
+        //all the disks and vids should target shop page
+        $('.abs-object, .floating-logo').each(function(i, el){
+            $(el).css( 'cursor', 'pointer' );
+            $(el).click(function(e){
+                window.location = '/collections/milfdad-season-1';
+            })
+        });
+
+        $('video').each(function (i, el) {
+            if($(el).is(":hidden")){
+                $(el)[0].pause();
+            }
+        });
+    })
+</script>
+<script>
+var vid = document.getElementById("video-1498528320182");
+vid.muted = true;
+</script>

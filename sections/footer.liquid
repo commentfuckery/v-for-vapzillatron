@@ -1,0 +1,45 @@
+<footer class="site-footer" role="contentinfo">
+    <div class="page-width">
+        <div class="grid grid--no-gutters">
+            <div class="grid__item medium-up--one-half footer-margin not-show-on-mobile">
+                {%- assign footer_linklist = section.settings.footer_linklist -%}
+                {% if linklists[footer_linklist].links.size > 0 %}
+                    <ul class="site-footer__linklis site-footer__linklist--center footer-margin">
+                        {% for link in linklists[footer_linklist].links %}
+                            <li class="site-footer__linklist-item">
+                                <a href="{{ link.url }}">{{ link.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+
+            <div class="grid__item medium-up--one-half text-right">
+                <div class="site-footer__copyright--bottom footer-margin">
+                    <small class="site-footer__copyright-content">&copy; {{ 'now' | date: "%Y" }}
+                        - {{ 'MILFDAD, LLC' | link_to: '/' }}</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+{% schema %}
+{
+"name": "Footer",
+"settings": [
+{
+"type": "link_list",
+"id": "footer_linklist",
+"label": "Primary menu",
+"default": "footer"
+},
+{
+"type": "link_list",
+"id": "footer_linklist_two",
+"label": "Additional menu",
+"default": "main-menu"
+}
+]
+}
+{% endschema %}

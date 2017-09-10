@@ -1,0 +1,148 @@
+{{ 'jquery.bxslider.js' | asset_url | script_tag }}
+{{ 'jquery.bxslider.css' | asset_url | stylesheet_tag }}
+
+<div class="section-header text-center">
+    <h1 class="article__title">{{ article.title }}</h1>
+  <!--  {% if section.settings.blog_show_author %}
+        <span class="article__author">{{ 'blogs.article.by_author' | t: author: article.author }}</span>
+    {% endif %} -->
+
+    {% if section.settings.blog_show_date %}
+        <span class="article__date">
+      {{ article.published_at | time_tag: format: 'month_day_year' }}
+    </span>
+    {% endif %}
+</div>
+
+<div class="rte" id="article-body" itemprop="articleBody">
+    {{ article.content }}
+</div>
+<script>
+    $(document).ready(function () {
+        var $articleBody = $('#article-body');
+        var images = $articleBody.find('img').map(function () {
+            var el = $(this);
+            el.remove();
+            return el.attr('src');
+        }).get();
+
+
+        var template = "<ul class=\"bxslider\">";
+        images.forEach(x => template += "<li><img src='" + x + "' /></li>");
+        template += "</ul>";
+        template += "<div id=\"bx-pager\" class=\"hide-mobile\">";
+        images.forEach((x, i) => template += "<a data-slide-index=\"" + i + "\" href=\"\"><img src=\"" + x + "\" /></a>");
+        template += "</div>";
+        template += "<br /> <br /> <br />"
+
+        $articleBody.prepend(template);
+
+
+        var slider = $('.bxslider').bxSlider({
+            pagerCustom: '#bx-pager',
+            slideMargin: 50
+        });
+
+    })
+</script>
+
+<style>
+    #article-body {
+        display: block;
+    }
+
+    #article-body a {
+        border: none;
+    }
+
+    #article-body .bxslider li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    @media only screen and (max-width: 319px) {
+        #article-body .bxslider li {
+            margin-left: -35px;
+        }
+    }
+
+    @media only screen and (min-width: 320px) and (max-width: 592px) {
+        #article-body .bxslider li {
+            margin-left: -30px;
+        }
+    }
+
+    @media only screen and (min-width: 593px) and (max-width: 649px) {
+        #article-body .bxslider li {
+            margin-left: -35px;
+        }
+    }
+
+    @media only screen and (min-width: 650px) and (max-width: 749px) {
+        #article-body .bxslider li {
+            margin-left: -10px;
+        }
+    }
+
+    @media only screen and (min-width: 750px) and (max-width: 800px) {
+        #article-body .bxslider li {
+            margin-left: -35px;
+        }
+    }
+
+    @media only screen and (min-width: 801px) {
+        #article-body .bxslider li {
+            margin-left: -40px;
+        }
+    }
+
+    #article-body #bx-pager {
+        text-align: center;
+        margin-bottom: 5px;
+    }
+
+    #article-body #bx-pager img {
+        width: auto;
+        height: 81px;
+        padding: 3px;
+        border: solid #ccc 1px;
+        margin-right: 3px;
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+
+    #shopify-section-article-gallery-template {
+        padding-bottom: 30px;
+    }
+</style>
+
+{% if section.settings.show_share_buttons %}
+    {% include 'social-sharing', share_title: article.title, share_permalink: article.url, share_image: article.image %}
+{% endif %}
+
+{% schema %}
+{
+"name": "PostsGallery",
+"settings": [
+{
+"type": "checkbox",
+"id": "blog_show_author",
+"label": "Show author",
+"default": true
+},
+{
+"type": "checkbox",
+"id": "blog_show_date",
+"label": "Show date",
+"default": true
+},
+{
+"type": "checkbox",
+"id": "show_share_buttons",
+"label": "Show social sharing buttons",
+"default": true
+}
+]
+}
+{% endschema %}

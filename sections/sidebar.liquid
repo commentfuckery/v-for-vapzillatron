@@ -1,0 +1,94 @@
+<div data-section-id="{{ section.id }}" data-section-type="header-section">
+
+    <header class="site-header" id="sidebar-header" role="banner" style="background-color: transparent">
+        <div class="grid grid--no-gutters grid--table">
+            <nav class="grid__item medium-up--one-half small--hide full-width" id="AccessibleNav" role="navigation">
+                <ul class="site-nav list--inline {{ nav_alignment }}" id="SiteNav">
+                {%- assign footer_linklist = section.settings.footer_linklist -%}
+                    {% for link in linklists[section.settings.main_linklist].links %}
+                        {%- assign child_list_handle = link.title | handleize -%}
+                        <li class=" full-width {% if link.active %}site-nav--active{% endif %}">
+                            <a href="{{ link.url }}"
+                               class="site-nav__link site-nav__link--main side-href">{{ link.title }}</a>
+                        </li>
+                    {% endfor %}
+
+
+                </ul>
+
+            </nav>
+        </div>
+    </header>
+</div>
+
+<style>
+    #sidebar-header .full-width {
+        width: 100%;
+        max-width:150px;
+        display: inline-block;
+    }
+    #sidebar-header{
+        display: grid;
+    }
+    #sidebar-header .site-nav{
+        float:left;
+        text-align: left;
+    }
+    #sidebar-header .site-nav a{
+        font-size:19px;
+    }
+
+    nav ul li {
+        text-align: center;
+    }
+
+    nav ul li .side-href {
+        margin-bottom: 20px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        width: 100%;
+        font-family: "Arial";
+        font-weight: bold;
+        color: white;
+        background: black;
+        //text-transform: uppercase;
+
+    }
+
+    @media only screen and (max-width: 900px) {
+        nav ul.site-nav {
+            //margin-left: -50px;
+        }
+
+    }
+    @media only screen and (max-width: 900px) {
+
+
+        #sidebar-header .site-nav a{
+            font-size:10px;
+        }
+        nav ul li .side-href {
+            margin-bottom: 20px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            width: 100%;
+            color: white;
+            background: black;
+        }
+    }
+
+</style>
+
+{% schema %}
+{
+    "name": "Sidebar",
+    "settings": [
+            {
+                "type": "link_list",
+                "id": "main_linklist",
+                "label": "Menu",
+                "default": "main-menu"
+            }
+        ]
+}
+{% endschema %}

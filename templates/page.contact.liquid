@@ -1,0 +1,54 @@
+<div class="page-width">
+  <div class="grid">
+    <div class="grid__item medium-up--three-sixths medium-up--push-one-twelfth">
+      <div class="section-header text-center mail-page-title">
+        <h1>MAILING LIST</h1>
+      </div>
+
+      {% if page.content.size > 0 %}
+        <div class="rte mail-page-description">
+          Sign up to receive information regarding exclusive collection previews, special events, and seasonal sale offers
+        </div>
+      {% endif %}
+
+
+
+
+      <div class="contact-form form-vertical">
+        {% form 'contact' %}
+
+          {% if form.posted_successfully? %}
+            <p class="note form-success">
+              {{ 'contact.form.post_success' | t }}
+            </p>
+          {% endif %}
+
+          {{ form.errors | default_errors }}
+
+          <div class="mail-page-labels">
+            <label for="ContactFormEmail" class="{% if form.errors contains 'email' %}label--error{% endif %}">EMAIL</label>
+            <input type="email" id="ContactFormEmail" name="contact[email]" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}" class="{% if form.errors contains 'email' %}input--error{% endif %}">
+
+            <label for="ContactFormName">FIRST NAME</label>
+            <input type="text" id="ContactFormName" name="contact[name]" value="{% if form[name] %}{{ form[name] }}{% elsif customer %}{{ customer.name }}{% endif %}">
+
+            <label for="ContactFormPhone">LAST NAME</label>
+            <input type="text" id="ContactFormName" name="contact[name]"  value="{% if form[name] %}{{ form[name] }}{% elsif customer %}{{ customer.name }}{% endif %}">
+
+            <label for="address_country_new">{{ 'customer.addresses.country' | t }}</label>
+            <select id="address_country_new" name="contact[country]" data-default="{{form.country}}">{{ country_option_tags }}</select>
+
+          </div>
+<style>
+#address_country_new option{
+    text-transform: uppercase;
+}
+</style>
+
+          <input type="submit" class="btn mail-page-submit-button" value="subscribe">
+
+        {% endform %}
+      </div>
+    </div>
+  </div>
+</div>

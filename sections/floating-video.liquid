@@ -1,0 +1,71 @@
+<div class="abs-object small--hide" id="floating-url-{{ section.id }}"
+            style="
+                    position: absolute;
+                    left: {{ section.settings.xOffset }}%;
+                    top: {{  section.settings.yOffset }}%;
+                    transform: scale({{ section.settings.scale | times: 2.0 | divided_by: 100.0  }});
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    height:400px;
+                    z-index:-1;
+            {% if section.settings.url %}
+                background-image: url('{{ section.settings.url }}');
+            {% endif %}
+                    ">
+    <video id="video-{{ section.id }}" width="100%" height="auto" autoplay="autoplay" loop="loop" preload="auto">
+        {% if section.settings.url %}
+            <source src="{{ section.settings.url }}" type="video/webm"></source>
+            <!--source src="book.mp4"></source-->
+        {% endif %}
+
+    </video>
+</div>
+
+
+{% schema %}
+{
+    "name": "Video absolute position",
+    "class": "index-section absolute-section",
+    "settings": [
+        {
+            "type":      "text",
+            "id":        "url",
+            "label":     "Resource url",
+            "placeholder": "Full Https url here"
+        },
+        {
+            "type": "range",
+            "id": "scale",
+            "label": "Scale",
+            "min": 0,
+            "max": 100,
+            "unit":      "%",
+            "default":   50
+        },
+        {
+            "type": "range",
+            "id": "xOffset",
+            "label": "X offset",
+            "min": 0,
+            "max": 100,
+            "unit":      "%",
+            "default":   30
+        },
+        {
+            "type": "range",
+            "id": "yOffset",
+            "label": "Y offset",
+            "min": 0,
+            "max": 100,
+            "unit":      "%",
+            "default":   30
+        }
+    ],
+    "presets": [
+            {
+                "name": "Absolute Video",
+                "category": "MilfDad"
+            }
+        ]
+}
+{% endschema %}

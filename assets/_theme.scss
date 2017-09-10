@@ -1,0 +1,319 @@
+/* Color palette */
+
+$black: #222222;
+$topaz: #15bbcf;
+$black-two: #000000;
+$action: #ef3834;
+$inactive: #c7c7c7;
+$white: #ffffff;
+$checkbutton: #ee2c2b;
+$black-three: #030303;
+
+
+/* Text styles */
+
+
+
+.STOCKISTS-Desktop {
+  font-family: Arial-MT;
+  font-size: 50.3px;
+  font-weight: bold;
+  font-style: italic;
+  line-height: 1.07;
+  text-align: center;
+  color: $black-two;
+}
+
+.STOCKISTS-Header {
+  font-family: Arial-MT;
+  font-size: 50px;
+  font-weight: bold;
+  font-style: italic;
+  line-height: 0.72;
+  text-align: center;
+  color: $black-two;
+}
+
+.body-font {
+  font-family: Roboto;
+  font-size: 50px;
+  font-weight: 500;
+  line-height: 0.71;
+  text-align: right;
+  color: $white;
+}
+
+.Single-Product-Title-Desktop {
+  font-family: Arial-MT;
+  font-size: 44.7px;
+  font-weight: bold;
+  line-height: 2.57;
+  text-align: left;
+  color: $black-two;
+}
+
+#Header {
+  font-family: Arial-MT;
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 0.9;
+  text-align: center;
+  color: $black-two;
+}
+
+.Cart-sub-total {
+  font-family: Arial-MT;
+  font-size: 37.5px;
+  font-weight: bold;
+  line-height: 2.4;
+  text-align: left;
+  color: $black-two;
+}
+
+.info {
+  font-family: ArialMT;
+  font-size: 36px;
+  line-height: 1;
+  text-align: left;
+  color: $black-two;
+}
+
+.Check-Out-Label {
+  font-family: Arial-MT;
+  font-size: 34.6px;
+  font-weight: bold;
+  line-height: 2;
+  text-align: center;
+  color: $white;
+}
+
+.Single-Product-Price-Desktop {
+  font-family: ArialMT;
+  font-size: 31.9px;
+  line-height: 3.6;
+  text-align: left;
+  color: $black-two;
+}
+
+.Desktop-Size {
+  font-family: "arial_mtbold";
+  font-size: 30.1px;
+  font-weight: bold;
+  line-height: 3;
+  text-align: center;
+  color: $black-three;
+}
+
+.Add-To-Cart-Desktop {
+  font-family: Arial-MT;
+  font-size: 30.1px;
+  font-weight: bold;
+  line-height: 3;
+  text-align: center;
+  color: $white;
+}
+
+.STOCKISTS-Item {
+  font-family: Arial-MT;
+  font-size: 30px;
+  font-weight: bold;
+  font-style: italic;
+  line-height: 2.4;
+  text-align: center;
+  color: $black-two;
+}
+
+.Product-Name {
+  font-family: Arial-MT;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 2.4;
+  text-align: left;
+  color: $black-two;
+}
+
+#Body-Text {
+  font-family: Arial-MT;
+  font-size: 28px;
+  font-weight: bold;
+  font-style: italic;
+  line-height: 1.07;
+  text-align: center;
+  color: $black-two;
+}
+
+menu {
+  font-family: Arial-MT;
+  font-size: 27.7px;
+  font-weight: bold;
+  font-style: italic;
+  line-height: 2.4;
+  text-align: center;
+  color: $white;
+}
+
+.CTA-Checkout {
+  font-family: Arial-MT;
+  font-size: 27.7px;
+  font-weight: bold;
+  line-height: 2;
+  text-align: center;
+  color: $white;
+}
+
+.Cart-Item-Title {
+  font-family: Arial-MT;
+  font-size: 25px;
+  font-weight: bold;
+  line-height: 3.6;
+  text-align: left;
+  color: $black-two;
+}
+
+.Size-Label {
+  font-family: Arial-MT;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 3;
+  text-align: center;
+  color: $black-three;
+}
+
+.CTA {
+  font-family: Arial-MT;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 3;
+  text-align: center;
+  color: $white;
+}
+
+.Label-Mailing {
+  font-family: Arial-MT;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 3;
+  text-align: left;
+  color: $black-two;
+}
+
+.Counter {
+  font-family: Arial-MT;
+  font-size: 24px;
+  font-style: italic;
+  line-height: 3;
+  text-align: right;
+  color: $black-two;
+}
+
+.Desktop-Cart {
+  font-family: ArialMT;
+  font-size: 18px;
+  line-height: 3;
+  text-align: left;
+  color: $black-two;
+}
+
+.Product-Description {
+  font-family: ArialMT;
+  font-size: 24px;
+  line-height: 1;
+  text-align: left;
+  color: $black-two;
+}
+
+.Clart-Size {
+  font-family: ArialMT;
+  font-size: 22.5px;
+  line-height: 4;
+  text-align: left;
+  color: $black-two;
+}
+
+.remove-from-cart {
+  font-family: Arial-MT;
+  font-size: 22.2px;
+  font-weight: bold;
+  line-height: 2.06;
+  text-align: center;
+  color: $white;
+}
+
+.Desktop-Menu {
+  font-family: Arial-MT;
+  font-size: 21px;
+  font-weight: bold;
+  font-style: italic;
+  line-height: 2.32;
+  text-align: center;
+  color: $white;
+}
+
+.Copyright {
+  font-family: Arial-MT;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
+  line-height: 3.6;
+  text-align: right;
+  color: $black-two;
+}
+
+.Footer-Links {
+  font-family: Arial-MT;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 3.6;
+  text-align: center;
+  color: $black-two;
+}
+
+.Cart-Item {
+  font-family: Arial-MT;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 3.6;
+  text-align: left;
+  color: $black-two;
+}
+
+.Cart-Text {
+  font-family: ArialMT;
+  font-size: 18px;
+  line-height: 4;
+  text-align: right;
+  color: $black-two;
+}
+
+.Price {
+  font-family: ArialMT;
+  font-size: 18px;
+  line-height: 4;
+  text-align: left;
+  color: $black-two;
+}
+
+.Remove-From-Cart {
+  font-family: Arial-MT;
+  font-size: 17.8px;
+  font-weight: bold;
+  line-height: 2.06;
+  text-align: center;
+  color: $white;
+}
+
+.hidden{
+  display: none !important;
+}
+
+@media only screen and (min-width: 750px) {
+  .hide-mobile, .only-desktop-view{
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 749px) {
+  .hide-desktop {
+    display: none !important;
+  }
+}
