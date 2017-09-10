@@ -1,9 +1,9 @@
 development:
-  password: 
-  theme_id: "ID OF THEME"
-  store: (something).myshopify.com	
+  password: f8b5bec204f197cc40f9e0d8bcbaafa5
+  theme_id: "live"
+  store: shitshitshitshitshitshit.myshopify.com
 production:
-  password: 
+  password: f8b5bec204f197cc40f9e0d8bcbaafa5
   theme_id: 'live'
-  store: (something).myshopify.com
+  store: shitshitshitshitshitshit.myshopify.com
   timeout: 30s
